@@ -15,6 +15,7 @@ export class UserComponent {
   // })
 
   @Input({required: true}) user!:any;
+  @Input({required: true}) selected!:boolean;
   @Output() selectedUser = new EventEmitter()
   get ImagePath(){
     return '../../app/assets/users/users/' + this.user.avatar

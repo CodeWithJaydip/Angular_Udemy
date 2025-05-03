@@ -3,20 +3,22 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./header/header.component";
 import { UserComponent } from "./user/user.component";
 import { DUMMY_USERS } from './dummy_users';
+import { TasksComponent } from "./tasks/tasks.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, UserComponent],
+  imports: [RouterOutlet, HeaderComponent, UserComponent, TasksComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'angular';
-  users = DUMMY_USERS
+  users? = DUMMY_USERS
+  selectedUser:any;
 
-  selectedUser(user:any){
-    console.log(user);
-
+  SelectedUser(user:any){
+    this.selectedUser = user;
   }
+
 }
